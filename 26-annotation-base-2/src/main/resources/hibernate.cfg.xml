@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!--数据库连接四要素-->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql:///hibernate?useSSL=false&amp;serverTimezone=GMT%2B8</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root</property>
+        <!--方言-->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+        <!--数据源：数据库连接池-->
+        <property name="hibernate.connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property>
+        <!--注册当前Session对象上下文：保证同一线程中获取到的Session对象是同一个Session对象-->
+        <property name="hibernate.current_session_context_class">thread</property>
+        <!--自动建表-->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <!--显示SQL-->
+        <property name="hibernate.show_sql">true</property>
+        <!--格式化SQL-->
+        <property name="hibernate.format_sql">true</property>
+        <!--注册实体类-->
+        <mapping class="com.powernode.beans.Student"/>
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.powernode.beans">
+    <class name="Student">
+        <id name="sid">
+            <generator class="native"/>
+        </id>
+        <property name="sname"/>
+        <set name="courses" cascade="save-update" table="middle">
+            <key column="studentId"/>
+            <many-to-many class="Course" column="courseId"/>
+        </set>
+    </class>
+</hibernate-mapping>

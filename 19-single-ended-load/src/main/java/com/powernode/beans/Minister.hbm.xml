@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.powernode.beans">
+    <class name="Minister">
+        <id name="mid">
+            <generator class="native"/>
+        </id>
+        <property name="mname"/>
+        <many-to-one name="country" class="Country" cascade="save-update" column="countryId" fetch="select" lazy="proxy"/>
+    </class>
+</hibernate-mapping>
